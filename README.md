@@ -1,42 +1,41 @@
-# ErrorHandlinginSolidity Contract
+# Error Handling in Smart Contract
 
-This is a Solidity smart contract that demonstrates different error handling techniques using `assert`, `revert`, and `require` functions.
+This Solidity smart contract demonstrates error handling techniques using `require`, `assert`, and `revert` functions.
 
 ## License
 
-This contract is using the MIT License.
+This contract is licensed under the MIT License.
 
 ## Prerequisites
 
-- Solidity ^0.8.18
+- Solidity ^0.8.0
 
 ## Contract Details
 
-The `uid_Checker` contract provides the following functions:
+The `smartContract` contract provides the following functions:
 
-### `Assert_UID`
+### `setValue`
 
-- This function demonstrates the usage of the `assert` function.
-- It takes a `uid` parameter and checks if it is not in the given range of our uid system by using `assert` statement.
-- If the condition fails, it triggers an "Internal error" and aborts the execution.
+- Sets the value of the contract.
+- Only the owner can set the value.
+- The value must be greater than zero.
 
-### `Student_Counter`
+### `getValue`
 
-- This function demonstrates the usage of the `revert` function.
-- here if a valid uid is given then it increases the student_counter by one
-- and if the valid uid is not given then the whole transaction is reverted back by printing the error statement
-- wer have a `StudentCount` variable which is used to count all the valid uid
+- Retrieves the current value of the contract.
 
-### `uid_req`
+### `assertExample`
 
-- This function demonstrates the usage of the `require` function.
-- here the functions shows that a given uid is valid or not
-- we have given a valid range in the require condition `{ 1-99 }`
-- and if the given uid is not in the range than it will print a error
-- otherwise it will send us a `true` bool statement  
+- Demonstrates the usage of the `assert` function.
+- Asserts that two input values are not equal.
+
+### `revertExample`
+
+- Demonstrates the usage of the `revert` function.
+- Reverts the transaction if the input is less than 10.
 
 ## Usage
 
-1. Make sure you have Solidity ^0.8.18 installed.
-2. Compile and deploy the `ErrorHandling` contract to a supported Ethereum network.
+1. Ensure you have Solidity ^0.8.0 installed.
+2. Compile and deploy the `smartContract` contract to a supported Ethereum network.
 3. Interact with the deployed contract by calling the available functions and providing the required parameters.
